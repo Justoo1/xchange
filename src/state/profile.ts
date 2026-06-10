@@ -4,7 +4,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 
 import type { Profile, ProfileKind } from '@/types';
 
-/** Seed cards (Mara Okafor) — the prototype's MY_CARDS. */
+/** Seed cards (Mara Okafor) used in local mode. */
 const SEED: Record<ProfileKind, Profile> = {
   personal: {
     kind: 'personal',

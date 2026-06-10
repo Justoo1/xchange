@@ -1,5 +1,5 @@
 /**
- * Xchange design system — exact tokens from the XCHANGE handoff (XCHANGE.html).
+ * Xchange design system tokens.
  * Premium dark canvas, Space Grotesk display + Manrope body, mint accent.
  */
 import { mix, withAlpha } from '@/lib/color';
@@ -34,7 +34,7 @@ export interface AccentSet {
   ink: string;
 }
 
-/** Derive the accent variants exactly like the prototype's color-mix() did. */
+/** Derive the accent variants via color-mix-style blending. */
 export function accentSet(base: string): AccentSet {
   return {
     base,

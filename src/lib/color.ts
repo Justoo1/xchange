@@ -1,10 +1,10 @@
 /**
- * Color helpers for the XCHANGE design system.
+ * Color helpers for the Xchange design system.
  *
- * The design colors avatars/cards by a single `hue` number via OKLCH gradients
+ * Avatars/cards are colored by a single `hue` number via OKLCH gradients
  * (perceptually even chroma/lightness, only the hue varies). React Native can't
  * parse `oklch()`, so we convert to hex here. We also derive the accent's
- * soft/line/ink variants the way the prototype's `color-mix()` did.
+ * soft/line/ink variants via `color-mix`-style blending.
  */
 
 function clamp01(x: number): number {
@@ -41,7 +41,7 @@ export function oklchToHex(L: number, C: number, H: number): string {
   return `#${toHex2(gamma(lr))}${toHex2(gamma(lg))}${toHex2(gamma(lb))}`;
 }
 
-/** The two-stop avatar/card gradient for a given hue (matches data.jsx avatarBg). */
+/** The two-stop avatar/card gradient for a given hue. */
 export function hueGradient(hue: number): [string, string] {
   return [oklchToHex(0.62, 0.13, hue), oklchToHex(0.48, 0.15, (hue + 38) % 360)];
 }
@@ -81,7 +81,7 @@ function parseHex(hex: string): [number, number, number] {
   return [parseInt(v.slice(0, 2), 16), parseInt(v.slice(2, 4), 16), parseInt(v.slice(4, 6), 16)];
 }
 
-/** rgba string from a hex + alpha (the prototype's `color-mix(... %, transparent)`). */
+/** rgba string from a hex + alpha (equivalent to `color-mix(... %, transparent)`). */
 export function withAlpha(hex: string, alpha: number): string {
   const [r, g, b] = parseHex(hex);
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;

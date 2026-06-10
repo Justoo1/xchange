@@ -3,7 +3,7 @@ import { Pressable, View } from 'react-native';
 import { colors } from '@/theme';
 import { useAccent } from '@/theme/useAccent';
 
-/** Pill toggle matching the prototype's Privacy switches. */
+/** Pill toggle used for the privacy settings. */
 export function Toggle({ on, onChange }: { on: boolean; onChange: (v: boolean) => void }) {
   const accent = useAccent();
   return (

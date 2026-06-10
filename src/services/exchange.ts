@@ -27,7 +27,7 @@ export interface Peer {
   dist: number;
 }
 
-/** The person you "meet" in the demo (prototype's INCOMING). */
+/** The person you "meet" in the local-mode demo. */
 export const INCOMING: Card = {
   name: 'Diego Santos',
   handle: '@diego',

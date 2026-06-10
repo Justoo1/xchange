@@ -5,7 +5,7 @@ import { hueGradient } from '@/lib/color';
 import { colors, fonts } from '@/theme';
 import { DIAGONAL, Gradient } from './Gradient';
 
-/** Initials monogram on a hue-based gradient (matches data.jsx avatarBg). */
+/** Initials monogram on a hue-based gradient. */
 export function Avatar({
   name = '',
   hue = 158,
