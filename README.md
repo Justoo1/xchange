@@ -1,8 +1,8 @@
 # Xchange
 
 Exchange contacts in seconds — **QR first**, with **Tap (NFC)** and an AirDrop-style
-**Nearby radar**. A faithful React-Native (Expo SDK 56) build of the **XCHANGE** design
-handoff: premium dark canvas, Space Grotesk + Manrope type, mint accent, hue-tinted cards.
+**Nearby radar**. A polished React-Native (Expo SDK 56) app: premium dark UI, Space
+Grotesk + Manrope type, a mint accent, and hue-tinted cards.
 
 ---
 
@@ -68,21 +68,20 @@ signed-out → sign-in, signed-in-without-a-card → onboarding, otherwise the a
 | **Profile** | Your cards, **Privacy** toggles (approve-before-sharing, include socials, Nearby discoverable), app settings. |
 | **Tweaks** | Brand **accent** (5), card **layout** (minimal / gradient / bold), default exchange method — live preview. |
 
-The standout touches from the design brief are here: **Work/Personal** profiles, the
-**"where did you meet"** context captured at exchange time, the **Nearby radar**, and
-satisfying **success animations**.
+Standout touches: **Work/Personal** profiles, the **"where did you meet"** context
+captured at exchange time, the **Nearby radar**, and satisfying **success animations**.
 
 ---
 
-## Design system — straight from the handoff
+## Design system
 
-Tokens mirror `XCHANGE.html` exactly ([`src/theme/index.ts`](src/theme/index.ts)):
+Tokens live in [`src/theme/index.ts`](src/theme/index.ts):
 
 - **Canvas** `#0c0e12`, surfaces `#14161c → #23262f`, hairlines at 8–14% white.
 - **Type** Space Grotesk (display), Manrope (body), Space Mono (eyebrows) — loaded via
   `@expo-google-fonts/*`.
 - **Accent** mint `#6ce5b1` by default; the other 4 swatches and the `soft`/`line`/`ink`
-  variants are derived the way the prototype's `color-mix()` did ([`src/lib/color.ts`](src/lib/color.ts)).
+  variants are derived at runtime via `color-mix`-style blending ([`src/lib/color.ts`](src/lib/color.ts)).
 - **Hue cards** every person has a `hue`; avatars and the gradient card are built from an
   **OKLCH** two-stop gradient, converted to sRGB in [`src/lib/color.ts`](src/lib/color.ts)
   since RN can't parse `oklch()`.
@@ -127,6 +126,9 @@ over NFC; the request/approve/confirm path above is unchanged.
 
 ## Architecture
 
+A deeper dive — data flow, the secure-exchange sequence, and key decisions — is in
+**[ARCHITECTURE.md](ARCHITECTURE.md)**. The short version:
+
 ```
 src/
   app/
@@ -155,3 +157,9 @@ not — so the UI is identical in both modes and there's no dummy data once a ba
 Expo SDK 56 · React Native 0.85 · expo-router · **Supabase** (auth + Postgres + RLS +
 realtime) · **@tanstack/react-query** · zustand · expo-camera · react-native-qrcode-svg ·
 expo-linear-gradient · expo-crypto · expo-haptics · NativeWind · @expo-google-fonts.
+
+---
+
+## Contributing & license
+
+Setup and workflow are in **[CONTRIBUTING.md](CONTRIBUTING.md)**. Licensed under [MIT](LICENSE).
