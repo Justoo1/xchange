@@ -141,4 +141,3 @@ not — so the UI is identical in both modes and there's no dummy data once a ba
 Expo SDK 56 · React Native 0.85 · expo-router · **Supabase** (auth + Postgres + RLS +
 realtime) · **@tanstack/react-query** · zustand · expo-camera · react-native-qrcode-svg ·
 expo-linear-gradient · expo-crypto · expo-haptics · NativeWind · @expo-google-fonts.
-# xchange
