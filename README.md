@@ -6,6 +6,20 @@ handoff: premium dark canvas, Space Grotesk + Manrope type, mint accent, hue-tin
 
 ---
 
+## Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/card.png" width="30%" alt="My Card — home screen" />
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/radar.png" width="30%" alt="Nearby exchange radar" />
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/confirm.png" width="30%" alt="Confirm & save sheet" />
+</p>
+
+<p align="center"><sub><b>My Card</b> · <b>Nearby radar</b> · <b>Confirm &amp; save</b></sub></p>
+
+---
+
 ## Run it
 
 ```bash
